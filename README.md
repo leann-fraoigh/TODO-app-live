@@ -1,50 +1,47 @@
-# React + TypeScript + Vite
+# IndevLabs Frontend Assignment 2024
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## О сборке
 
-Currently, two official plugins are available:
+Сборка основана на стнадртном [шаблоне](<https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts>) React + TypeScript + Vite.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Установка
 
-## Expanding the ESLint configuration
+Вам понадобится установленный Node.js: 20 или выше.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+1. Для установки зависимостей выполните команду
 
-- Configure the top-level `parserOptions` property like this:
+    ```bash
+    npm install
+    ```
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+2. Для старта локального сервера выполните команду
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+    ```bash
+    npm run dev
+    ```
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## TODO
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+* Добавить возможность отмечать задачи как выполненные
+
+* Настроить хранение в LocalStorage
+
+## Структура проекта
+
+|Директория|Описание|
+|-|-|
+|**src/components**|Тут лежат все компоненты, которые импортируются в приложение.
+|**src/assets/css**|Тут лежат стили, все они импортируются через index.css.|
+|**src/assets/img**|Тут лежат изображения.|
+|**src/interfaces**|Тут лежат типы, которые используются по всему приложению.|
+
+## Тестирование
+
+Для запуска через терминал `npm run {command}`
+|Команда|Описание|
+|-|-|
+|**lint**|Запускает eslint|
+
+## О приложении
+
+Простое приложения для ведения списка задач. Можно добавлять и удалять задачи из списка
