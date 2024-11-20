@@ -1,9 +1,10 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
   font-weight: 400;
+  line-height: 1.5;
+  font-family: "Inter", system-ui, "Avenir", "Helvetica", "Arial", sans-serif;
 
   color: #213547;
+
   background-color: #ffffff;
 
   font-synthesis: none;
@@ -13,28 +14,32 @@
 }
 
 body {
-  margin: 0;
   min-width: 320px;
   min-height: 100vh;
+  margin: 0;
 }
 
 h1 {
   margin-top: 0.4em;
   margin-bottom: 0.6em;
+
   font-size: 3.2em;
   line-height: 1.2;
 }
 
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: .5em 1em;
-  font-size: 1em;
+  padding: 0.5em 1em;
+
   font-weight: 500;
-  font-family: inherit;
+  font-size: 1em;
   line-height: 1.4;
+  font-family: inherit;
+
   background-color: #f2f2f2;
+  border: 1px solid transparent;
+  border-radius: 8px;
   cursor: pointer;
+
   transition: border-color 0.25s;
 }
 
@@ -53,11 +58,11 @@ input {
 
 
 #root {
+  box-sizing: border-box;
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
-  box-sizing: border-box;
 }
 
 .sr-only {
