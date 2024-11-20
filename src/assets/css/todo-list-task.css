@@ -1,0 +1,15 @@
+.todo-list-task__delete-button {
+  width: 1.5em;
+  height: 1.5em;
+  margin-left: 8px;
+  padding: 4px;
+
+  vertical-align: bottom;
+  line-height: 0;
+  background-color: transparent;
+
+  background-image: url("../img/icon-trash.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 70%;
+}

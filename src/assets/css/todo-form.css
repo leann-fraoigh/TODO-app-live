@@ -1,0 +1,26 @@
+.todo-form {
+  display: flex;
+  place-items: flex-end;
+
+  gap: 8px;
+}
+
+.todo-form label {
+  line-height: 0;
+}
+
+.todo-form input {
+  width: 100%;
+  padding: .5em 1em;
+  
+  box-sizing: border-box;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  font-size: 1em;
+  line-height: 1.4;
+}
+
+.todo-form button {
+  white-space: nowrap;
+}

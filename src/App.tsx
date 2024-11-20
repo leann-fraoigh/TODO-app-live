@@ -1,15 +1,17 @@
-import viteLogo from '/vite.svg'
-import './App.css'
+import './assets/css/index.css';
+import { useState } from 'react';
+import { List } from './components/List';
+import { Form } from './components/Form';
 
 function App() {
+  const initialTasks = [{text: 'Item1', id: 1}, {text: 'Item2', id: 2}];
+  const [tasks, setTasks] = useState(initialTasks);
+
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-      </div>
       <h1>TODO list</h1>
+      <Form setTasks={setTasks}/>
+      <List tasks={tasks} setTasks={setTasks}/>
     </>
   )
 }

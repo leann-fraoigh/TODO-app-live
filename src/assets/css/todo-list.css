@@ -1,0 +1,13 @@
+
+.todo-list {
+  margin: 0;
+  padding: 1em 0 1em 1.1em;
+}
+
+.todo-list__task {
+  margin-bottom: 0.5em;
+}
+
+.todo-list__message {
+  margin: 0;
+}
