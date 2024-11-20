@@ -1,4 +1,4 @@
-# IndevLabs Frontend Assignment 2024
+# Frontend Assignment 2024
 
 ## О сборке
 
