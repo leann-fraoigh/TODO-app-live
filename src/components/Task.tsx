@@ -2,18 +2,26 @@ import { ChangeEvent, SetStateAction } from 'react';
 import type { Task } from '../interfaces';
 
 interface Props {
+  tasks: Task[];
   task: Task;
   setTasks: React.Dispatch<SetStateAction<Task[]>>
 };
 
-export function Task ({task, setTasks}: Props) {
+export function Task ({ tasks, task, setTasks}: Props) {
   const handleButtonClick = () => {
-    setTasks((prevTasks) => prevTasks.filter((item) => item.id !== task.id));
+    const updatedTasks = tasks.filter((item) => item.id !== task.id);
+    setTasks(updatedTasks);
+    localStorage.setItem("todolist", JSON.stringify(updatedTasks));
+
   };
 
   const handleInputChange = (event: ChangeEvent) => {
     const { checked } = event.target as HTMLInputElement;
-    setTasks((prevTasks) => prevTasks.map((item) => item.id === task.id ? { ...item, isComplete: checked } : item));
+    const updatedTasks = tasks.map((item) =>
+      item.id === task.id ? { ...item, isComplete: checked } : item
+    );
+    setTasks(updatedTasks)
+    localStorage.setItem("todolist", JSON.stringify(updatedTasks));
   };
 
   return (

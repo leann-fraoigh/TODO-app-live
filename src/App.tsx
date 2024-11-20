@@ -1,16 +1,22 @@
 import './assets/css/index.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { List } from './components/List';
 import { Form } from './components/Form';
 
 function App() {
-  const initialTasks = [{text: 'Item1', id: '1', isComplete: false}, {text: 'Item2', id: '2', isComplete: false}];
-  const [tasks, setTasks] = useState(initialTasks);
+  const [tasks, setTasks] = useState([]);
+
+  useEffect(() => {
+    const storedTasks = localStorage.getItem("todolist");
+    if (storedTasks) {
+      setTasks(JSON.parse(storedTasks));
+    }
+  }, []);
 
   return (
     <>
       <h1>TODO list</h1>
-      <Form setTasks={setTasks}/>
+      <Form setTasks={setTasks} tasks={tasks} />
       <List tasks={tasks} setTasks={setTasks}/>
     </>
   )

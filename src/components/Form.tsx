@@ -3,9 +3,10 @@ import type { Task } from '../interfaces';
 
 interface Props {
   setTasks: React.Dispatch<SetStateAction<Task[]>>
+  tasks: Task[]
 }
 
-export function Form({ setTasks }: Props) {
+export function Form({ setTasks, tasks }: Props) {
   const [inputValue, setInputValue] = useState('');
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -15,10 +16,12 @@ export function Form({ setTasks }: Props) {
       id: Date.now().toString(),
       isComplete: false
     };
-    setTasks((prevTasks: Task[]) => [
-      ...prevTasks,
+    const updatedTasks = [
+      ...tasks,
       newTask,
-    ]);
+    ]
+    setTasks(updatedTasks);
+    localStorage.setItem("todolist", JSON.stringify(updatedTasks));
     setInputValue('');
   };
 

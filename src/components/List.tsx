@@ -13,7 +13,7 @@ export function List ({ tasks, setTasks }: Props) {
     <ul className="todo-list" role="list">
       {tasks.length > 0 ? (
         tasks?.map((task, index) => (
-          <Task key={index} task={task} setTasks={setTasks} />
+          <Task key={index} tasks={tasks} task={task} setTasks={setTasks} />
         ))
       ) : (
         <p className="todo-list__message">No tasks to display. 😴</p>
