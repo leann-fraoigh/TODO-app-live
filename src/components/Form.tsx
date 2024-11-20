@@ -2,7 +2,7 @@ import { useState, SetStateAction } from 'react';
 import type { Task } from '../interfaces';
 
 interface Props {
-  setTasks: React.Dispatch<SetStateAction<{ text: string; id: number; }[]>>
+  setTasks: React.Dispatch<SetStateAction<Task[]>>
 }
 
 export function Form({ setTasks }: Props) {
@@ -12,7 +12,8 @@ export function Form({ setTasks }: Props) {
     event.preventDefault();
     const newTask = {
       text: inputValue,
-      id: Date.now()
+      id: Date.now().toString(),
+      isComplete: false
     };
     setTasks((prevTasks: Task[]) => [
       ...prevTasks,
@@ -28,7 +29,7 @@ export function Form({ setTasks }: Props) {
 
   return (
     <form className="todo-form" onSubmit={handleSubmit}>
-      <label htmlFor="todo">
+      <label>
         <input
           type="text"
           name="todo"

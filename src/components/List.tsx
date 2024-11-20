@@ -4,13 +4,13 @@ import { Task } from "./Task";
 
 interface Props {
   tasks: TaskType[]
-  setTasks: React.Dispatch<SetStateAction<{ text: string; id: number; }[]>>
+  setTasks: React.Dispatch<SetStateAction<TaskType[]>>
 }
 
 
 export function List ({ tasks, setTasks }: Props) {
   return (
-    <ul className="todo-list">
+    <ul className="todo-list" role="list">
       {tasks.length > 0 ? (
         tasks?.map((task, index) => (
           <Task key={index} task={task} setTasks={setTasks} />

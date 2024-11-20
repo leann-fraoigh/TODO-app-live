@@ -4,7 +4,7 @@ import { List } from './components/List';
 import { Form } from './components/Form';
 
 function App() {
-  const initialTasks = [{text: 'Item1', id: 1}, {text: 'Item2', id: 2}];
+  const initialTasks = [{text: 'Item1', id: '1', isComplete: false}, {text: 'Item2', id: '2', isComplete: false}];
   const [tasks, setTasks] = useState(initialTasks);
 
   return (

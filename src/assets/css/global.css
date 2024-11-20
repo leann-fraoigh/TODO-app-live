@@ -56,6 +56,11 @@ input {
   font-family: inherit;
 }
 
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
 
 #root {
   box-sizing: border-box;
